@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Hewan - Interaktif dan Animasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            margin: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .question-box {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .question {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .answers {
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .answer {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .answer:hover {
+            background-color: #e8e8e8;
+        }
+
+        .correct {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+        }
+
+        .incorrect {
+            background-color: #F44336;
+            color: white;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .result-icon {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .checked {
+            background-color: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .x-mark {
+            background-color: #F44336;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-text {
+            margin-left: 10px;
+        }
+
+        .result-box {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .result-box p {
+            font-size: 1.5em;
+            margin: 10px;
+        }
+
+        .final-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .final-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Quiz Tentang Hewan</h1>
+
+    <div class="question-box" id="question1">
+        <div class="question">1. Apa nama hewan terbesar di dunia?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, true)">Paus Biru</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Gajah</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Kapal Lumba-lumba</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question2">
+        <div class="question">2. Hewan apakah yang dikenal sebagai "Raja Hutan"?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, false)">Harimau</div>
+            <div class="answer" onclick="checkAnswer(this, true)">Singa</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Serigala</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question3">
+        <div class="question">3. Burung apa yang bisa berbicara meniru kata-kata manusia?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, true)">Burung Beo</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Merpati</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Elang</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question4">
+        <div class="question">4. Hewan apa yang bisa terbang dan hidup di laut?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, false)">Penguin</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Kepiting</div>
+            <div class="answer" onclick="checkAnswer(this, true)">Burung Albatros</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question5">
+        <div class="question">5. Apa hewan mamalia yang bisa terbang?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, true)">Kelelawar</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Burung</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Kuda</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question6">
+        <div class="question">6. Siapakah pemimpin kelompok monyet yang dikenal dalam film "Tarzan"?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, false)">Kera</div>
+            <div class="answer" onclick="checkAnswer(this, true)">Kera Goriila</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Chimpanzee</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question7">
+        <div class="question">7. Apa nama hewan yang dapat menggali terowongan besar di tanah?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, false)">Serigala</div>
+            <div class="answer" onclick="checkAnswer(this, true)">Marmot</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Kelinci</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question8">
+        <div class="question">8. Apa nama hewan yang dikenal dengan kecerdasannya dan mampu menggunakan alat?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, false)">Monyet</div>
+            <div class="answer" onclick="checkAnswer(this, true)">Simian</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Anjing</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question9">
+        <div class="question">9. Hewan apa yang dikenal dengan kemampuan hibernasi selama musim dingin?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, false)">Musang</div>
+            <div class="answer" onclick="checkAnswer(this, true)">Beruang</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Kucing</div>
+        </div>
+    </div>
+
+    <div class="question-box" id="question10">
+        <div class="question">10. Apa nama kelompok hewan yang dapat memproduksi madu?</div>
+        <div class="answers">
+            <div class="answer" onclick="checkAnswer(this, true)">Lebah</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Semut</div>
+            <div class="answer" onclick="checkAnswer(this, false)">Kupu-kupu</div>
+        </div>
+    </div>
+
+    <div class="result-box" id="result-box" style="display: none;">
+        <p>Jumlah Jawaban Benar: <span id="correct-count">0</span></p>
+        <p>Jumlah Jawaban Salah: <span id="incorrect-count">0</span></p>
+        <button class="final-btn" onclick="resetQuiz()">Coba Lagi</button>
+    </div>
+
+    <script>
+        let correctAnswers = 0;
+        let incorrectAnswers = 0;
+
+        function checkAnswer(element, isCorrect) {
+            let parent = element.parentElement;
+            let answers = parent.querySelectorAll('.answer');
+
+            // Disable clicking once answered
+            answers.forEach(answer => {
+                answer.style.pointerEvents = 'none';
+            });
+
+            if (isCorrect) {
+                element.classList.add('correct');
+                element.innerHTML += '<span class="result-icon checked">&#10003;</span>';
+                correctAnswers++;
+            } else {
+                element.classList.add('incorrect');
+                element.innerHTML += '<span class="result-icon x-mark">&#10005;</span>';
+                incorrectAnswers++;
+            }
+
+            // Show results when all questions are answered
+            if (correctAnswers + incorrectAnswers === 10) {
+                document.getElementById('correct-count').textContent = correctAnswers;
+                document.getElementById('incorrect-count').textContent = incorrectAnswers;
+                document.getElementById('result-box').style.display = 'block';
+            }
+        }
+
+        function resetQuiz() {
+            correctAnswers = 0;
+            incorrectAnswers = 0;
+            document.getElementById('result-box').style.display = 'none';
+            const answers = document.querySelectorAll('.answer');
+            answers.forEach(answer => {
+                answer.classList.remove('correct', 'incorrect');
+                answer.innerHTML = answer.innerHTML.replace('<span class="result-icon checked">&#10003;</span>', '');
+                answer.innerHTML = answer.innerHTML.replace('<span class="result-icon x-mark">&#10005;</span>', '');
+                answer.style.pointerEvents = 'auto';
+            });
+        }
+    </script>
+
+</body>
+</html>
